@@ -38,8 +38,8 @@ if (typeof Windows != 'undefined') {
     // mi.addEventListener("invoked", modeSwitch);
 
     // Add two custom sections for the dial interface
-    var mi2 = Windows.UI.Input.RadialControllerMenuItem.createFromIcon("Page Turns", Windows.Storage.Streams.RandomAccessStreamReference.createFromUri(new Windows.Foundation.Uri("ms-appx:///icon.png")));
-    var mi3 = Windows.UI.Input.RadialControllerMenuItem.createFromIcon("Prep Build", Windows.Storage.Streams.RandomAccessStreamReference.createFromUri(new Windows.Foundation.Uri("ms-appx:///kevin.png")));
+    var mi2 = Windows.UI.Input.RadialControllerMenuItem.createFromIcon("Page Turns", Windows.Storage.Streams.RandomAccessStreamReference.createFromUri(new Windows.Foundation.Uri("http://127.0.0.1:8080/icon.png")));
+    var mi3 = Windows.UI.Input.RadialControllerMenuItem.createFromIcon("Prep Build", Windows.Storage.Streams.RandomAccessStreamReference.createFromUri(new Windows.Foundation.Uri("http://127.0.0.1:8080/kevin.png")));
   //push to controler
     controller.menu.items.push(mi2);
     controller.menu.items.push(mi3);
