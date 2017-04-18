@@ -7,20 +7,14 @@ $(document).ready(function() {
 
 
 
-function log(msg) {
-    var div = document.getElementById("log");
-    var p = document.createElement('p');
-    p.textContent = msg;
-    div.appendChild(p);
-    console.log(msg);
-}
+
 var mode = 'system';
 function modeSwitch(ev) {
-    log("invoked " + ev.target.displayText);
+
     mode = ev.target.displayText;
 }
 if (typeof Windows != 'undefined') {
-    log("initializing dial");
+
     // Modify System Defaults to Only Show Volume and Next/Prev Track as per guidance.
     // https://docs.microsoft.com/en-us/windows/uwp/input-and-devices/windows-wheel-interactions
 
@@ -67,11 +61,5 @@ if (typeof Windows != 'undefined') {
       //  log("rotation changed: " + e.detail[0].rotationDeltaInDegrees + " in " + mode);
     });
  
- 
- 
- 
- 
-    // To remove system defaults and just have your own...
-    ////config.setDefaultMenuItems(<any>[]);
-    log("win/dial initialized");
+
 }
