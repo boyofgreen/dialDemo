@@ -1,10 +1,11 @@
 //initalize fullpage
 
 $(document).ready(function() {
-	$('#fullpage').fullpage();
+	$('#fullpage').fullpage({
+    sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
+    anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage']
+  });
 });
-
-
 
 
 
@@ -21,8 +22,7 @@ if (typeof Windows != 'undefined') {
 
     //initilize dial
     var config = Windows.UI.Input.RadialControllerConfiguration.getForCurrentView();
-    config.setDefaultMenuItems([Windows.UI.Input.RadialControllerSystemMenuItemKind.volume,
-        Windows.UI.Input.RadialControllerSystemMenuItemKind.scroll]);
+    config.setDefaultMenuItems([Windows.UI.Input.RadialControllerSystemMenuItemKind.scroll]);
     var controller = Windows.UI.Input.RadialController.createForCurrentView();
 
 
@@ -32,8 +32,8 @@ if (typeof Windows != 'undefined') {
     // mi.addEventListener("invoked", modeSwitch);
 
     // Add two custom sections for the dial interface
-    var mi2 = Windows.UI.Input.RadialControllerMenuItem.createFromIcon("Page Turns", Windows.Storage.Streams.RandomAccessStreamReference.createFromUri(new Windows.Foundation.Uri("http://127.0.0.1:8080/icon.png")));
-    var mi3 = Windows.UI.Input.RadialControllerMenuItem.createFromIcon("Prep Build", Windows.Storage.Streams.RandomAccessStreamReference.createFromUri(new Windows.Foundation.Uri("http://127.0.0.1:8080/kevin.png")));
+    var mi2 = Windows.UI.Input.RadialControllerMenuItem.createFromIcon("Page Turns", Windows.Storage.Streams.RandomAccessStreamReference.createFromUri(new Windows.Foundation.Uri("http://127.0.0.1:80/icon.png")));
+    var mi3 = Windows.UI.Input.RadialControllerMenuItem.createFromIcon("Prep Build", Windows.Storage.Streams.RandomAccessStreamReference.createFromUri(new Windows.Foundation.Uri("http://127.0.0.1:80/icon.png")));
   //push to controler
     controller.menu.items.push(mi2);
     controller.menu.items.push(mi3);
@@ -45,7 +45,7 @@ if (typeof Windows != 'undefined') {
 
     controller.addEventListener("buttonclicked", function (e) {
      if(mode !== 'Prep Build') return
-     document.body.classList.toggle('build')
+     document.body.classList.toggle('build');
     });
 
     controller.addEventListener("rotationchanged", function (e) {
